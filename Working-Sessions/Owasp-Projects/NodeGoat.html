@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<!-- The above 3 meta tags *must* come first in the head-->
+<title>NodeGoat (OWASP Summit 2017)</title>
+<meta name="description" content="OWASP Summit 2017"/>
+<meta name="keywords" content="OWASP Summit 2017"/>
+<meta name="author" content="owaspsummit.org"/>
+<!-- this icon shows in browser toolbar-->
+<link rel="icon" type="image/x-icon" href="/website/assets/img/owasp-grey.ico"/>
+<!-- Css-->
+<link rel="stylesheet" href="/website/assets/libs/bootstrap/css/bootstrap.min.css" media="all"/>
+<link id="blocks-style" rel="stylesheet" href="/website/assets/css/blocks.css" media="all"/>
+<!-- Scripts-->
+<script src="/website/assets/libs/jquery-1.12.4.min.js"></script>
+<script src="/website/assets/libs/countdown.js"></script>
+<script src="/website/assets/libs/custom.script.js"></script>
+<script src="/website/assets/libs/bootstrap/js/bootstrap.min.js"></script></head>
+  <body>
+<!-- HEADER-->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <nav id="menu-offscroll" class="navbar navbar-default">
+          <div class="navbar-header">
+            <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/website"><img src="/website/assets/img/blocks/logo-small.png" alt="owasp summit small logo"/></a>
+          </div>
+          <div class="collapse navbar-collapse blocks-menu">
+            <!--.navbar-collapse.blocks-menu-->
+            <!--center-->
+            <ul class="nav navbar-nav">
+              <li><a href="/pages/schedule">Schedule</a></li>
+              <li><a href="/website/working-sessions.html">Tracks</a></li>
+              <li><a href="/website/participants.html">Participants</a></li>
+              <li><a href="/website/venue.html">Venue</a></li>
+              <li><a href="/pages/faq">Faq</a></li>
+              <li><a href="/website/blog.html">Blog</a></li>
+              <li><a href="/website/sponsors.html">Sponsors</a></li>
+              <li><a href="/website/about.html">About</a></li>
+              <li><a href="/website/summit-organization.html">Admin</a></li>
+              <button class="btn btn-primary"><a href="/website/buy-ticket.html">Buy Ticket</a></button>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="page-content">
+      <div class="container">
+<div class="working-session">
+  <div class="container">
+    <h1>NodeGoat</h1>
+    <div class="ws-metadata"><b>Track: &#32;</b><a href="/Working-Sessions/Owasp-Projects">Owasp Projects</a><br/><b>Topics: &#32;</b>
+      <a href="/Working-Sessions/Technologies/Node.html">Node</a>
+      
+      
+      <br/>
+      
+      <b>Organizer(s): &#32;</b>
+      <a href="/Participants/remote/Kim-Carter.html">Kim Carter</a>
+      <span>(remotely)</span>
+      
+      <br/>
+      
+      <b>Participants(s): &#32;</b>
+      <a href="/Participants/ticket-24h/Tiago-Mendo.html">Tiago Mendo</a>
+      
+      
+      <br/><br/><b>When: &#32;</b><a href="/pages/schedule/Tue.html">Tue</a><br/><b>Time: </b><br/><b>Location: </b><br/>
+    </div>
+    <hr/><h2 id="why">Why</h2>
+
+<p><a href="https://github.com/OWASP/NodeGoat">NodeGoat</a> is a deliberately insecure NodeJS web application maintained by a small collection of OWASP leaders/members, designed to teach web application security and the importance of moving the finding and fixing of defects to <a href="https://leanpub.com/holistic-infosec-for-web-developers/read#leanpub-auto-security-focussed-tdd">within the Development Teams Sprints</a>, thus <a href="https://leanpub.com/holistic-infosec-for-web-developers/read#leanpub-auto-cheapest-place-to-deal-with-defects">significantly reducing costs</a>. NodeGoat comes with a <a href="https://nodegoat.herokuapp.com/tutorial">tutorial</a> that walks the practitioner through what, where, and how to fix the baked-in OWASP Top 10 defects in a NodeJS context.</p>
+
+<h2 id="ideas">Ideas</h2>
+
+<p>Where does the community benefit most from this project and where do we want to take it? I’ve got lots of ideas, because I’m constantly running both public and private <a href="https://blog.binarymist.net/presentations-publications/">Working-Sessions</a> demonstrating the value that <a href="https://github.com/binarymist/NodeGoat/wiki/Security-Regression-Testing-with-Zap-API">Security Regression Testing</a> utilising NodeGoat and Zap API brings to organisations, but input and bouncing ideas off each other can only improve NodeGoat.</p>
+
+<h3 id="work-to-be-done">Work to be done</h3>
+
+<ol>
+  <li>Take the coverage of Security Regression Testing with Zap API further, not just a high level active scan, but more granular and across more than a single route, and possibly create a branch (or whatever provides the least amount of overhead) with all tests passing (by default tests are supposed to <a href="https://youtu.be/DrwXUOJWMoo">fail until fixed</a>)</li>
+  <li>Get all components of the Security Regression Testing <a href="https://github.com/OWASP/NodeGoat/issues/60">working</a> within <a href="https://github.com/OWASP/NodeGoat/issues/60">their containers</a> and visible</li>
+  <li>Move the security fixes added in the code comments to separate branches or a single branch and automate patch per fix. In this way, we would have a master branch for the insecure app, and multiple branches or automated patches (one per OWASP Top 10 vulnerability) with fixes incorporated in it</li>
+  <li>Address the same defect types with examples using different Node libraries and architectures</li>
+  <li>Upgrade dependencies and make sure the same defect approaches are being applied <a href="https://github.com/OWASP/NodeGoat/issues/82">across the entire application</a></li>
+</ol>
+
+<h2 id="who">Who</h2>
+
+<p>The target audience for this Working Session is:</p>
+
+
+    <h3>Related Working Session(s)</h3>
+    <ul>
+      
+      
+      <li><a href="/Working-Sessions/Education/index.html">Education</a></li>
+      
+      
+      <li><a href="/Working-Sessions/Education/Evaluation-Optimization-and-Creation-of-Training-Slides.html">Evaluation/Optimization/Creation of Training Slides</a></li>
+      
+      
+      <li><a href="/Working-Sessions/Education/Teaching-Attacker-Perspective-to-Developers.html">Teaching Attacker perspective to Developers</a></li>
+      
+    </ul><br/>
+    <hr/>
+    <p>Back to list of <a href='/website/working-sessions.html'>all Working Sessions and Tracks</a></p>
+    <p>Edit this page <a href='https://github.com/OWASP/owasp-summit-2017/blob/master/Working-Sessions/Owasp-Projects/NodeGoat.md'>here </a></p>
+  </div>
+</div></div>
+    </div>
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-0 col-sm-0"></div>
+      <div class="col-xs-6 col-sm-6">
+        <h2>Code of Conduct</h2>
+        <p>The OWASP Summit is dedicated to providing a harassment-free event experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of summit participants in any form in any summit venue, including working sessions, social events, or other channels of communication. A summit participant who violates these rules will be asked to stop. Should the participant not comply, the participant may be expelled from the summit without a refund. The summit organisers reserve the right to expel anyone who violates these rules.</p>
+      </div>
+      <div class="col-xs-3 col-sm-3">
+        <h2>Contact</h2>
+        <p>OWASP Foundation</p>
+        <p>1200-C Agora Drive, #232</p>
+        <p>Bel Air, MD 21014</p>
+        <p>USA</p>
+        <p>+1 951-692-7703 (tel)</p>
+        <p>+1 443-283-4021(fax)</p>
+      </div>
+      <div class="col-xs-3 col-sm-3">
+        <h2>Follow Us</h2><a href="https://twitter.com/owaspsummit" target="_blank"><img src="/website/assets/img/blocks/twitter.png" alt="twitter logo"/></a><a href="https://github.com/OWASP/owasp-summit-2017" target="_blank"><img src="/website/assets/img/blocks/github.png" alt="github logo"/></a>
+      </div>
+      <div class="col-xs-0 col-sm-0"></div>
+    </div>
+  </div>
+</div>
+    
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<!-- The above 3 meta tags *must* come first in the head-->
+<title>Jekyll Properties (OWASP Summit 2017)</title>
+<meta name="description" content="OWASP Summit 2017"/>
+<meta name="keywords" content="OWASP Summit 2017"/>
+<meta name="author" content="owaspsummit.org"/>
+<!-- this icon shows in browser toolbar-->
+<link rel="icon" type="image/x-icon" href="/website/assets/img/owasp-grey.ico"/>
+<!-- Css-->
+<link rel="stylesheet" href="/website/assets/libs/bootstrap/css/bootstrap.min.css" media="all"/>
+<link id="blocks-style" rel="stylesheet" href="/website/assets/css/blocks.css" media="all"/>
+<!-- Scripts-->
+<script src="/website/assets/libs/jquery-1.12.4.min.js"></script>
+<script src="/website/assets/libs/countdown.js"></script>
+<script src="/website/assets/libs/custom.script.js"></script>
+<script src="/website/assets/libs/bootstrap/js/bootstrap.min.js"></script></head>
+  <body>
+<!-- HEADER-->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <nav id="menu-offscroll" class="navbar navbar-default">
+          <div class="navbar-header">
+            <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/website"><img src="/website/assets/img/blocks/logo-small.png" alt="owasp summit small logo"/></a>
+          </div>
+          <div class="collapse navbar-collapse blocks-menu">
+            <!--.navbar-collapse.blocks-menu-->
+            <!--center-->
+            <ul class="nav navbar-nav">
+              <li><a href="/pages/schedule">Schedule</a></li>
+              <li><a href="/website/working-sessions.html">Tracks</a></li>
+              <li><a href="/website/participants.html">Participants</a></li>
+              <li><a href="/website/venue.html">Venue</a></li>
+              <li><a href="/pages/faq">Faq</a></li>
+              <li><a href="/website/blog.html">Blog</a></li>
+              <li><a href="/website/sponsors.html">Sponsors</a></li>
+              <li><a href="/website/about.html">About</a></li>
+              <li><a href="/website/summit-organization.html">Admin</a></li>
+              <button class="btn btn-primary"><a href="/website/buy-ticket.html">Buy Ticket</a></button>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="page-content">
+      <div class="container">
+        <h1>Jekyll Properties</h1>
+        <p>This page describes the <em>properties</em> in the raw pages. These properties are used for generating markup and references in the website at owaspsummit.org .
+The general form of these properties looks like:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>---
+keyword1: value
+keyword2: value
+---
+</code></pre>
+</div>
+
+<p>These <em>keyword</em> and <em>value</em> are described below.
+While keywords are always any of the listed constants below, values may either be a constant (shown in <strong>bold</strong> below) or free text. Please note that value <em>cannot</em> contain other markdown.</p>
+
+<p>The most important use may be the individual pages for <a href="../website/participants.html">Participants</a> and <a href="../Working-Sessions/index.html">Working-Sessions</a>, so lets start with describing the properties used there first.</p>
+
+<h2 id="participant-properties">Participant Properties</h2>
+
+<p>These properties are important for the participant’s individual page, see <a href="../website/participants.html">Participants</a>.</p>
+
+<ul>
+  <li><strong>layout: blocks/page-content</strong></li>
+  <li><strong>type: participant</strong></li>
+  <li><strong>title:</strong> Your Name</li>
+  <li><strong>job-title:</strong> tile to be listed</li>
+  <li><strong>image:</strong> link to your image (full url)</li>
+  <li><strong>linkedin:</strong> your linkedin name (just name not full url)</li>
+  <li><strong>twitter:</strong> your twitter handle (without the @ sign)</li>
+  <li><strong>facebook:</strong> your facebook name (just name not full url)</li>
+</ul>
+
+<p>Properties for special use:</p>
+
+<ul>
+  <li><strong>expenses:</strong> owasp</li>
+  <li><strong>time:</strong> vacation</li>
+</ul>
+
+<h2 id="workshop-properties">Workshop Properties</h2>
+
+<p>These properties are important for the Workshop page, see <a href="../Working-Sessions/index.html">Working-Sessions</a>.</p>
+
+<ul>
+  <li><strong>layout: blocks/page-content</strong></li>
+  <li><strong>type: workshop</strong></li>
+  <li><strong>title:</strong> Title of workshop</li>
+  <li><strong>track:</strong> one of <strong>workshop</strong> or <strong>project-summit</strong> or <strong>open-source-tools</strong></li>
+  <li><strong>organizers:</strong> Your Name</li>
+</ul>
+
+<h2 id="general-and-other-properties">General and other Properties</h2>
+
+<p>General properties used in all pages.</p>
+
+<ul>
+  <li>
+    <p><strong>layout</strong>:</p>
+
+    <p>valid values are: <strong>default</strong>, <strong>event-point/page</strong>, <strong>blocks/page-content</strong>, <strong>blocks/page-content</strong>, <strong>event-point/index</strong>, <strong>event-point/register</strong></p>
+  </li>
+  <li>
+    <p><strong>title</strong></p>
+
+    <p>free text used later as page title</p>
+  </li>
+  <li>
+    <p><strong>type</strong></p>
+
+    <p>valid values are: <strong>content</strong>, <strong>logistic</strong>, <strong>participant</strong>, <strong>workshop</strong></p>
+  </li>
+</ul>
+
+<br>
+        <hr>
+        <p>Edit this page <a href='https://github.com/OWASP/owasp-summit-2017/blob/master/Logistics/Jekyll-Properties.md'>here </a></p>
+      </div>
+    </div>
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-0 col-sm-0"></div>
+      <div class="col-xs-6 col-sm-6">
+        <h2>Code of Conduct</h2>
+        <p>The OWASP Summit is dedicated to providing a harassment-free event experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of summit participants in any form in any summit venue, including working sessions, social events, or other channels of communication. A summit participant who violates these rules will be asked to stop. Should the participant not comply, the participant may be expelled from the summit without a refund. The summit organisers reserve the right to expel anyone who violates these rules.</p>
+      </div>
+      <div class="col-xs-3 col-sm-3">
+        <h2>Contact</h2>
+        <p>OWASP Foundation</p>
+        <p>1200-C Agora Drive, #232</p>
+        <p>Bel Air, MD 21014</p>
+        <p>USA</p>
+        <p>+1 951-692-7703 (tel)</p>
+        <p>+1 443-283-4021(fax)</p>
+      </div>
+      <div class="col-xs-3 col-sm-3">
+        <h2>Follow Us</h2><a href="https://twitter.com/owaspsummit" target="_blank"><img src="/website/assets/img/blocks/twitter.png" alt="twitter logo"/></a><a href="https://github.com/OWASP/owasp-summit-2017" target="_blank"><img src="/website/assets/img/blocks/github.png" alt="github logo"/></a>
+      </div>
+      <div class="col-xs-0 col-sm-0"></div>
+    </div>
+  </div>
+</div>
+    
+  </body>
+</html>
