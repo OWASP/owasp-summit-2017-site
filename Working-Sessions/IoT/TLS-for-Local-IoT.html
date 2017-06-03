@@ -114,6 +114,20 @@
 
 <p>See ‘Proposal’ below for more detailed information.</p>
 
+<h2 id="background">Background</h2>
+
+<p>SRP (Secure Remote Password) is a secure password-based authentication and key-exchange protocol, defined here: http://srp.stanford.edu/whatisit.html .  Versions 6 and 6a are the latest versions.  The protocol is based on the discrete logarithm problem and defends against eavesdropping and man-in-the-middle attacks.  The security is derived from a shared password known to both the user/client and the server.</p>
+
+<p>TLS-SRP is already implemented in the</p>
+
+<ul>
+  <li>OpenSSL and GnuTLS libraries;</li>
+  <li>Apache web server (mod_ssl and mod_gnutls);</li>
+  <li>Curl web transfer agent.</li>
+</ul>
+
+<p>Default user credentials are already per-device for many IoT and embedded products, with the credentials printed on the bottom/back of the device or included with the user documentation.</p>
+
 <h2 id="definition-of-done">Definition of Done</h2>
 
 <p>Developed roadmap for TLS-SRP implementation and adoption.</p>
@@ -182,26 +196,31 @@
 
 <p>Once implemented, IoT and embedded vendors will need to be encouraged to use TLS-SRP over traditional TLS for web admin security.</p>
 
-<h2 id="background">Background</h2>
+<h2 id="supporting-files">Supporting files</h2>
 
-<p>SRP (Secure Remote Password) is a secure password-based authentication and key-exchange protocol, defined here: http://srp.stanford.edu/whatisit.html .  Versions 6 and 6a are the latest versions.  The protocol is based on the discrete logarithm problem and defends against eavesdropping and man-in-the-middle attacks.  The security is derived from a shared password known to both the user/client and the server.</p>
-
-<p>TLS-SRP is already implemented in the</p>
-
+<p>Over on https://github.com/rtfcode/tls-srp I have created some supporting info for test/dev:</p>
 <ul>
-  <li>OpenSSL and GnuTLS libraries;</li>
-  <li>Apache web server (mod_ssl and mod_gnutls);</li>
-  <li>Curl web transfer agent.</li>
+  <li>Apache configuration for a TLS-SRP vhost - I know Apache isn’t very IoT but it’s just a demo.
+    <ul>
+      <li>httpd.conf.diff - two changes to your apache config.</li>
+      <li>httpd-srp.conf - a vhost config using gnutls_module.</li>
+      <li>index.shtml - basic index that reports SRP username.</li>
+    </ul>
+  </li>
+  <li>stunnel-5.41-srp.patch - patch to implement client/server SRP in stunnel - useful for testing.</li>
+  <li>stunnel - configs to use the patched stunnel.
+    <ul>
+      <li>http2srp.conf - use a normal browser with a TLS-SRP server.</li>
+      <li>srp2http.conf - use a TLS-SRP browser with a normal server.</li>
+      <li>password.srpv - SRP verfier file for server end of stunnel.</li>
+    </ul>
+  </li>
+  <li>README.txt - a concise description of all these files and how to make them work.</li>
 </ul>
 
-<p>Default user credentials are already per-device for many IoT and embedded products, with the credentials printed on the bottom/back of the device or included with the user documentation.</p>
+<p>Using these files/configs, it is possible to turn a non-SRP web server into a SRP web server; simply bind your web server to loopback and run a srp2http stunnel to present TLS-SRP to the network and connect to the web server locally.</p>
 
-<h2 id="references-and-comments">References and Comments</h2>
-
-<ul>
-  <li><em>“TLS is a poor suggestion for IoT, and I personally wouldn’t advise creating recommendations toward using it. Better recs in near future.”</em> - see <a href="https://twitter.com/DonAndrewBailey/status/858719418813120512">twitter thread</a> for more comments.</li>
-</ul>
-
+<p>Equally, it is possible to make a web browser appear TLS-SRP enabled to test a TLS-SRP web server implementation; simply run a http2srp stunnel on your desktop and point your browser at that instead of directly at the web server</p>
 <br/>
     <hr/>
     <p>Back to list of <a href='/website/working-sessions.html'>all Working Sessions and Tracks</a></p>
